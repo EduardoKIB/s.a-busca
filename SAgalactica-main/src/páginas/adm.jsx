@@ -129,6 +129,7 @@ function Adm() {
 
       {/* Lista de usuários */}
       <h2>Lista de Usuários</h2>
+      <div className='alingTabela'>
       <table>
         <thead>
           <tr>
@@ -158,6 +159,7 @@ function Adm() {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
