@@ -1,0 +1,697 @@
+Estilos principais
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff; /* Branco para o fundo */
+}
+
+.align {
+  background-color: #E6E6E6; /* Fundo branco para o formulário */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Aumentado para acomodar campos lado a lado */
+  width: 100%;
+  
+}
+
+.header {
+  max-height: 80px;
+}
+
+h1 {
+  font-size: 24px;
+  color: black; /* Preto */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  color: #800000; /* Bordô */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha se não houver espaço */
+  gap: 20px; /* Espaço entre os itens */
+}
+
+.form > div {
+  flex: 1 1 45%; /* Campos ocupam 45% da largura do contêiner, com flexibilidade para ajustar */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+input {
+
+
+  width: 85%; /* Ocupa 100% da largura do contêiner pai */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#password {
+  width: 93%;
+}
+
+.register-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #800000; /* Bordô */
+  color: #ffffff; /* Texto branco */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.register-button:hover {
+  background-color: #420000; /* Bordô mais escuro */
+}
+
+p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.link {
+  color: #600000; /* Bordô */
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para a galeria */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); /* Aumenta a largura mínima das colunas para 250px */
+  grid-auto-rows: 300px; /* Aumenta a altura automática para as linhas */
+  gap: 15px; /* Espaço entre os itens */
+  padding: 15px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+/* Estilo para os itens da galeria */
+.galeria-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Borda arredondada para um visual mais moderno */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para as imagens */
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta a imagem para cobrir o contêiner sem distorcer */
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave */
+}
+
+/* Efeito ao passar o mouse */
+.galeria-item:hover {
+  transform: scale(1.05); /* Aumenta o item ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Aumenta a sombra ao passar o mouse */
+}
+
+.galeria-item:hover img {
+  opacity: 0.8; /* Diminui a opacidade da imagem ao passar o mouse */
+}
+
+/*Pagina Home*/
+
+.home-page {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('img/imghome.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9); /* Container branco com opacidade */
+  padding: 40px;
+  max-width: 600px;
+  margin: 50px auto; /* Margem superior para cobrir parcialmente a imagem */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1;
+}
+.btn-h {
+  display: inline-flex;
+  padding: 12px 25px;
+  background: #800000;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: none;
+  transition: .5s;
+  margin: 0 5px;
+}
+.btn-h:hover{
+  box-shadow: 0 0 5px #3d0303
+}
+
+.buttons-container {
+  margin-top: 30px;
+}
+
+.buttons-container-forBusca {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/*--Pagina Busca----*/
+/* Define o layout da página principal */
+.reserva-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Estilo para o título da busca */
+.titulo-busca {
+  text-align: center;
+  font-size: 33px;
+  font-weight: bold;
+  margin-bottom: 20px; 
+  color: #800000;
+  margin-top:auto ;
+}
+
+
+
+
+
+
+
+.quarto-box {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	background-color: #E6E6E6;
+	border-radius: 10px;
+	max-width: 1100px;
+	height: 150px;
+}
+.payment-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.credit-card-form {
+  display: text;
+  flex-direction: column;
+  
+}
+
+.form-group {
+  margin-bottom: 15px;
+
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #800000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 124%;
+  margin-top: 10px;
+}
+.quarto-image {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin-right: 20px;
+}
+#card-number.input, #card-name, #expiry-date, #cvv, #pix-key, #amount{
+  width: 270%;
+}
+
+.quarto-text {
+	display: flex;
+	flex-direction: column;
+  margin-bottom: 80px;
+  text-align: left;
+}
+.quarto-title {
+  margin-top: 80px;
+	font-size: 30px;
+	margin-bottom: 1px;
+  text-align: left;
+  margin-left: 17px;
+
+}
+
+.quarto-subtitle {
+	font-size: 26px;
+	margin-bottom: 20px;
+  color: gray;
+  margin-left: 17px;
+ 
+}
+
+.select-button {
+	padding: 5px 20px;
+	background-color: #800000;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+  width: 100px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.select-button:hover {
+	background-color: #0056b3;
+}
+
+.Align1 {
+	background-color: #E6E6E6;
+	padding: 30px;
+	border-radius: 10px;
+	width: 410px;
+	height: 350px;
+	box-sizing: border-box;
+}
+
+.form-group {
+	width: 90%;
+	max-width: 300px;
+	margin: 10px auto;
+	color: #555;
+}
+
+.search-button {
+	padding: 10px 25px;
+	background-color: #800000;
+	color: #fff;
+	border-radius: 10px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: 0.5s;
+  margin-left: 35%;
+  margin-top: 10px;
+  
+}
+
+.search-button:hover {
+	background-color: #a52a2a;
+  
+}
+
+.close-button{
+  background-image: url('img/closebutton.png');
+  background-size: 16px 16px; 
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 16px; 
+  height: 16px;
+  margin-bottom: 9px;
+  margin-left: 300px ;
+}
+
+/*----------fim pagina busca-------------*/
+
+/* Estilo para o contêiner principal da página Sobre */
+.sobre-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas menores */
+  align-items: flex-start; /* Alinha os itens ao topo para uma disposição mais natural */
+  gap: 20px; /* Espaço entre a imagem e o texto */
+  padding: 20px;
+  background-color: #f9f9f9; /* Cor de fundo leve para contraste */
+  box-sizing: border-box; /* Inclui o padding e border no tamanho total do contêiner */
+}
+
+/* Estilo para a imagem */
+.sobre-imagem {
+  flex: 1;
+  min-width: 300px; /* Largura mínima para garantir que a imagem não fique muito pequena */
+}
+
+.sobre-imagem img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Adiciona bordas arredondadas à imagem */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para um efeito de profundidade */
+}
+
+/* Estilo para o texto */
+.sobre-texto {
+  flex: 2;
+  min-width: 300px; /* Largura mínima para garantir que o texto não fique muito estreito */
+  font-family: 'Arial', sans-serif; /* Fonte clara e legível */
+  line-height: 1.8; /* Aumenta o espaçamento entre linhas para melhor leitura */
+  color: #333; /* Cor do texto para bom contraste */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.sobre-texto h1 {
+  margin-top: 0;
+  font-size: 2rem; /* Tamanho da fonte para os títulos */
+  color: #222; /* Cor do título para destaque */
+  font-weight: bold; /* Fonte em negrito para títulos */
+}
+
+.sobre-texto p {
+  font-size: 1.3rem; /* Tamanho da fonte para o parágrafo */
+  margin: 0% 0% 0% 10%; /* Remove a margem padrão dos parágrafos */
+  padding: 0; /* Remove o padding padrão dos parágrafos */
+  width: 80%;
+}
+
+/* Adiciona um espaço extra entre parágrafos */
+.sobre-texto p + p {
+  margin-top: 1rem;
+}
+
+/* Citações */
+.sobre-texto blockquote {
+  font-size: 1.1rem; /* Tamanho da fonte para citações */
+  font-style: italic; /* Estilo itálico para citações */
+  border-left: 4px solid #ddd; /* Linha vertical à esquerda da citação */
+  padding-left: 15px; /* Espaçamento interno à esquerda da citação */
+  margin: 1rem 0; /* Margem em cima e embaixo da citação */
+  color: #666; /* Cor do texto da citação */
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .sobre-container {
+    gap: 15px; /* Reduz o espaço entre a imagem e o texto */
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column; /* Alinha a imagem e o texto em coluna em telas menores */
+    align-items: center; /* Centraliza os itens em telas menores */
+    gap: 10px; /* Reduz o espaço entre a imagem e o texto */
+  }
+
+  .sobre-imagem, .sobre-texto {
+    min-width: 100%; /* Garante que ambos os elementos ocupem a largura total */
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-texto h1 {
+    font-size: 1.5rem; /* Reduz o tamanho do título para telas menores */
+  }
+
+  .sobre-texto p {
+    font-size: 0.9rem; /* Reduz o tamanho do parágrafo para telas menores */
+  }
+
+  .sobre-texto blockquote {
+    font-size: 1rem; /* Reduz o tamanho da fonte da citação para telas menores */
+  }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* src/components/AdminDashboard.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+/* src/components/AdminDashboard.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+.reservation-form {
+  margin-bottom: 20px;
+}
+
+.reservation-form .form-group {
+  margin-bottom: 10px;
+}
+
+.reservation-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.reservation-form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.reservation-form button {
+  background-color: #8a0303;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.reservation-form button:hover {
+  background-color: #45a049;
+}
+
+input {
+  max-width: 350px;
+}
+
+.aling {
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
+align-items: center;
+}
+
+.quartos {
+  margin: 3rem;
+  background-color: #cfcfcf;
+  height: 600px;
+  width: 500px;
+  border-radius: 20px;
+}
+
+.clientes {
+  margin: 3rem;
+}
+
+/* Estilo geral da página */
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="date"] {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilização da tabela de usuários */
+table {
+  width: 100%;
+
+  margin-top: 20px;
+  table-layout: auto;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #5f5f5f;
+  text-align: center;
+}
+
+table th {
+  background-color: #007bff;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #919191;
+}
+
+table tr:hover {
+  background-color: #a3a3a3;
+}
+
+/* Barra de pesquisa */
+input[type="text"][placeholder="Buscar por ID"] {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="text"][placeholder="Buscar por ID"]:focus {
+  border-color: #007bff;
+}
