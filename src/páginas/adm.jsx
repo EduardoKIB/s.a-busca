@@ -87,118 +87,124 @@ function Adm() {
   return (
     <div className="App">
       <h1>Administração de Usuários do Hotel</h1>
+      <div className="ADMaling">
+        <fieldset className='fieldset'>
+          <h2>Cadastro de Cliente</h2>
+          <div>
+            <input
+              type="text"
+              name="nome"
+              placeholder="Nome"
+              value={formData.nome}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="gmail"
+              placeholder="Gmail"
+              value={formData.gmail}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="telefone"
+              placeholder="Telefone"
+              value={formData.telefone}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="quarto"
+              placeholder="Número do Quarto"
+              value={formData.quarto}
+              onChange={handleChange}
+            />
+            <input
+              type="date"
+              name="dataEntrada"
+              value={formData.dataEntrada}
+              onChange={handleChange}
+            />
+            <input
+              type="date"
+              name="dataSaida"
+              value={formData.dataSaida}
+              onChange={handleChange}
+            />
 
-      <input
-        type="text"
-        placeholder="Buscar por ID ou Nome"
-        value={searchTerm}
-        onChange={handleSearchUser}
-      />
+            <button onClick={formData.id ? handleUpdateUser : handleAddUser}>
+              {formData.id ? 'Atualizar' : 'Adicionar'}
+            </button>
+          </div>
+        </fieldset>
+        <fieldset className='fieldset2'>
+          <h2>Lista de Usuários</h2>
+          <h3>barras de buscas:</h3>
+            <input
+              type="text"
+              placeholder="Buscar por ID ou Nome"
+              value={searchTerm}
+              onChange={handleSearchUser}
+            />
 
-      <input
-        type="date"
-        name="dataEntrada"
-        placeholder="Data de Entrada"
-        value={searchByDate.dataEntrada}
-        onChange={handleSearchByDate}
-      />
+            <input
+              type="date"
+              name="dataEntrada"
+              placeholder="Data de Entrada"
+              value={searchByDate.dataEntrada}
+              onChange={handleSearchByDate}
+            />
 
-      <input
-        type="date"
-        name="dataSaida"
-        placeholder="Data de Saída"
-        value={searchByDate.dataSaida}
-        onChange={handleSearchByDate}
-      />
+            <input
+              type="date"
+              name="dataSaida"
+              placeholder="Data de Saída"
+              value={searchByDate.dataSaida}
+              onChange={handleSearchByDate}
+            />
 
-      <input
-        type="text"
-        name="quarto"
-        placeholder="Buscar por Quarto"
-        value={searchByDate.quarto}
-        onChange={handleSearchByDate}
-      />
+            <input
+              type="text"
+              name="quarto"
+              placeholder="Buscar por Quarto"
+              value={searchByDate.quarto}
+              onChange={handleSearchByDate}
+            />
 
-      {/* Formulário */}
-      <div>
-        <input
-          type="text"
-          name="nome"
-          placeholder="Nome"
-          value={formData.nome}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="gmail"
-          placeholder="Gmail"
-          value={formData.gmail}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="telefone"
-          placeholder="Telefone"
-          value={formData.telefone}
-          onChange={handleChange}
-        />
-        <input
-          type="date"
-          name="dataEntrada"
-          value={formData.dataEntrada}
-          onChange={handleChange}
-        />
-        <input
-          type="date"
-          name="dataSaida"
-          value={formData.dataSaida}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="quarto"
-          placeholder="Número do Quarto"
-          value={formData.quarto}
-          onChange={handleChange}
-        />
-        <button onClick={formData.id ? handleUpdateUser : handleAddUser}>
-          {formData.id ? 'Atualizar' : 'Adicionar'}
-        </button>
-      </div>
-
-      <h2>Lista de Usuários</h2>
-      <div className='alingTabela'>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Gmail</th>
-            <th>Telefone</th>
-            <th>Data de Entrada</th>
-            <th>Data de Saída</th>
-            <th>Quarto</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredUsers.map((user) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.nome}</td>
-              <td>{user.gmail}</td>
-              <td>{user.telefone}</td>
-              <td>{user.dataEntrada}</td>
-              <td>{user.dataSaida}</td>
-              <td>{user.quarto}</td>
-              <td>
-                <button onClick={() => handleEditUser(user.id)}>Editar</button>
-                <button onClick={() => handleDeleteUser(user.id)}>Excluir</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+          <div className='alingTabela'>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Gmail</th>
+                <th>Telefone</th>
+                <th>Data de Entrada</th>
+                <th>Data de Saída</th>
+                <th>Quarto</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredUsers.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.nome}</td>
+                  <td>{user.gmail}</td>
+                  <td>{user.telefone}</td>
+                  <td>{user.dataEntrada}</td>
+                  <td>{user.dataSaida}</td>
+                  <td>{user.quarto}</td>
+                  <td>
+                    <button onClick={() => handleEditUser(user.id)}>Editar</button>
+                    <button onClick={() => handleDeleteUser(user.id)}>Excluir</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          </div>
+        </fieldset>
       </div>
     </div>
   );
