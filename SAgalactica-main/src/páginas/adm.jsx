@@ -2,21 +2,24 @@ import React, { useState } from 'react';
 import '../App.css';
 
 function Adm() {
-  // Estado para armazenar os dados dos usuários
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchByDate, setSearchByDate] = useState({
+    dataEntrada: '',
+    dataSaida: '',
+    quarto: ''
+  });
 
-  // Estado para os campos do formulário
   const [formData, setFormData] = useState({
     id: '',
     nome: '',
     gmail: '',
     telefone: '',
     dataEntrada: '',
-    dataSaida: ''
+    dataSaida: '',
+    quarto: ''
   });
 
-  // Função para atualizar os campos do formulário
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -24,9 +27,8 @@ function Adm() {
     });
   };
 
-  // Função para adicionar um novo usuário
   const handleAddUser = () => {
-    if (formData.nome && formData.gmail && formData.telefone && formData.dataEntrada && formData.dataSaida) {
+    if (formData.nome && formData.gmail && formData.telefone && formData.dataEntrada && formData.dataSaida && formData.quarto) {
       setUsers([...users, { ...formData, id: users.length + 1 }]);
       setFormData({
         id: '',
@@ -34,12 +36,12 @@ function Adm() {
         gmail: '',
         telefone: '',
         dataEntrada: '',
-        dataSaida: ''
+        dataSaida: '',
+        quarto: ''
       });
     }
   };
 
-  // Função para editar um usuário
   const handleEditUser = (id) => {
     const user = users.find((user) => user.id === id);
     if (user) {
@@ -47,7 +49,6 @@ function Adm() {
     }
   };
 
-  // Função para atualizar um usuário existente
   const handleUpdateUser = () => {
     setUsers(users.map((user) => (user.id === formData.id ? formData : user)));
     setFormData({
@@ -56,35 +57,66 @@ function Adm() {
       gmail: '',
       telefone: '',
       dataEntrada: '',
-      dataSaida: ''
+      dataSaida: '',
+      quarto: ''
     });
   };
 
-  // Função para deletar um usuário
   const handleDeleteUser = (id) => {
     setUsers(users.filter((user) => user.id !== id));
   };
 
-  // Função para buscar usuário por ID ou Nome
   const handleSearchUser = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
   };
 
-  // Filtragem de usuários com base no ID ou Nome
+  const handleSearchByDate = (e) => {
+    setSearchByDate({
+      ...searchByDate,
+      [e.target.name]: e.target.value
+    });
+  };
+
   const filteredUsers = users.filter((user) =>
-    user.id.toString().includes(searchTerm) || user.nome.toLowerCase().includes(searchTerm)
+    (user.id.toString().includes(searchTerm) || user.nome.toLowerCase().includes(searchTerm)) &&
+    (!searchByDate.dataEntrada || user.dataEntrada === searchByDate.dataEntrada) &&
+    (!searchByDate.dataSaida || user.dataSaida === searchByDate.dataSaida) &&
+    (!searchByDate.quarto || user.quarto === searchByDate.quarto)
   );
 
   return (
     <div className="App">
       <h1>Administração de Usuários do Hotel</h1>
 
-      {/* Barra de pesquisa por ID ou Nome */}
       <input
         type="text"
         placeholder="Buscar por ID ou Nome"
         value={searchTerm}
         onChange={handleSearchUser}
+      />
+
+      <input
+        type="date"
+        name="dataEntrada"
+        placeholder="Data de Entrada"
+        value={searchByDate.dataEntrada}
+        onChange={handleSearchByDate}
+      />
+
+      <input
+        type="date"
+        name="dataSaida"
+        placeholder="Data de Saída"
+        value={searchByDate.dataSaida}
+        onChange={handleSearchByDate}
+      />
+
+      <input
+        type="text"
+        name="quarto"
+        placeholder="Buscar por Quarto"
+        value={searchByDate.quarto}
+        onChange={handleSearchByDate}
       />
 
       {/* Formulário */}
@@ -122,12 +154,18 @@ function Adm() {
           value={formData.dataSaida}
           onChange={handleChange}
         />
+        <input
+          type="text"
+          name="quarto"
+          placeholder="Número do Quarto"
+          value={formData.quarto}
+          onChange={handleChange}
+        />
         <button onClick={formData.id ? handleUpdateUser : handleAddUser}>
           {formData.id ? 'Atualizar' : 'Adicionar'}
         </button>
       </div>
 
-      {/* Lista de usuários */}
       <h2>Lista de Usuários</h2>
       <div className='alingTabela'>
       <table>
@@ -139,6 +177,7 @@ function Adm() {
             <th>Telefone</th>
             <th>Data de Entrada</th>
             <th>Data de Saída</th>
+            <th>Quarto</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -151,6 +190,7 @@ function Adm() {
               <td>{user.telefone}</td>
               <td>{user.dataEntrada}</td>
               <td>{user.dataSaida}</td>
+              <td>{user.quarto}</td>
               <td>
                 <button onClick={() => handleEditUser(user.id)}>Editar</button>
                 <button onClick={() => handleDeleteUser(user.id)}>Excluir</button>
