@@ -21,11 +21,92 @@ Estilos principais
   max-height: 80px;
 }
 
-h1 {
-  font-size: 24px;
-  color: black; /* Preto */
-  margin-bottom: 20px;
-  text-align: center;
+.header { 
+  padding: 20px 40px; 
+  color: #800000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 98.2%;
+  z-index: 1000;
+  box-sizing: border-box; 
+  top: 0;
+  min-height: 115px; 
+}
+
+.navbar {
+  display: flex;
+  gap: 20px; 
+  flex-wrap: wrap; 
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul a {
+  margin-left: 10px; 
+}
+
+.btn, .btn2 {
+  padding: 12px 25px;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: .5s;
+  white-space: nowrap; 
+}
+
+.btn {
+  background: #800000;
+  border-radius: 10px;
+  color: #fff;
+  margin-left: 20px; 
+}
+
+.btn:hover {
+  box-shadow: 0 0 5px #3d0303;
+}
+
+.btn2 {
+  background: #FFFFFF;
+  border-radius: 20px;
+  color: #800000;
+}
+
+.btn2:hover {
+  text-shadow: 0 0 1px #3d0303;
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; 
+    padding: 15px 20px; 
+  }
+
+  .navbar {
+    justify-content: center; 
+  }
+
+  ul {
+    flex-direction: column; 
+  }
+
+  ul a {
+    margin-left: 0;
+    margin-bottom: 10px; 
+  }
+
+  .btn {
+    margin-left: 0;
+    margin-top: 10px; 
+  }
 }
 
 h2 {
@@ -695,4 +776,7 @@ fieldset {
 .ADMaling {
   display: grid;
   grid-template-columns: 32% 68%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
 }
