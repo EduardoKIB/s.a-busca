@@ -12,6 +12,29 @@ export default function Busca() {
   const [checkOutDate, setCheckOutDate] = useState('');
   const [guests, setGuests] = useState(1);
   const [showForm, setShowForm] = useState(false);
+  const [SuitePreco, setSuite] = useState(499);
+  const [ChaléPreco, setChaléPreco] = useState(590);
+  const [CabanaPreco, setCabanaPreco] = useState(490);
+  const [EstacionaPreco, setEstacionaPreco] = useState(100);
+
+  const calculateDaysDifference = (checkIn, checkOut) => {
+    const checkInDate = new Date(checkIn);
+    const checkOutDate = new Date(checkOut);
+    const timeDifference = checkOutDate - checkInDate;  // Diferença em milissegundos
+    const daysDifference = timeDifference / (1000 * 3600 * 24);  // Convertendo para dias
+    return daysDifference;
+  };
+
+  const daysDifference = checkInDate && checkOutDate ? calculateDaysDifference(checkInDate, checkOutDate) : 0;
+
+  
+
+
+  const mostrarAlerta = () =>{
+    alert(daysDifference)
+  }
+
+
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -106,8 +129,10 @@ export default function Busca() {
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
                 min="1"
+                
               />
             </div>
+            <button onClick={mostrarAlerta}></button>
             <div className="buttons-container-forBusca">
               <a href="/pagamento" className="btn-h">Pagamento</a>
             </div>
